@@ -95,7 +95,7 @@ const handleDeleteUser = () => {
             label={
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
                 <LocalGroceryStoreIcon />
-                <TabName>Mis Artículos</TabName>
+                <TabName>Mis Articulos</TabName>
               </Box>
             }
           />
