@@ -19,6 +19,7 @@ import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 import TabAccount from './account-settings/TabAccount'
 import TabSecurity from './account-settings/TabSecurity'
 import TableBasic from './account-settings/TableBasic'
+import TableArticle from './account-settings/TableArticle'
 
 // ** Third Party Styles Imports
 import 'react-datepicker/dist/react-datepicker.css'
@@ -89,6 +90,15 @@ const handleDeleteUser = () => {
               </Box>
             }
           />
+          <Tab
+            value='articulos'
+            label={
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <LocalGroceryStoreIcon />
+                <TabName>Mis Artículos</TabName>
+              </Box>
+            }
+          />
         </TabList>
 
         <TabPanel sx={{ p: 0 }} value='Perfil' index={0}>
@@ -99,6 +109,9 @@ const handleDeleteUser = () => {
         </TabPanel>
         <TabPanel sx={{ p: 2 }} value='Compras' index={2}>
           <TableBasic />
+        </TabPanel>
+        <TabPanel sx={{ p: 2 }} value='articulos' index={2}>
+          <TableArticle />
         </TabPanel>
       </TabContext>
     </Card>
