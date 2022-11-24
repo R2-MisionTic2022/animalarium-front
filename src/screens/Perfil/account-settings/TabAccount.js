@@ -99,7 +99,10 @@ const TabAccount = () => {
       <form>
         <Grid container spacing={7}>
           <Grid item xs={12} sm={6}>
-            <TextField fullWidth label='Username' placeholder={userInfo.username} defaultValue={userInfo.username} onChange={handleChange('username')} />
+            <TextField fullWidth label='Username' 
+            placeholder={userInfo.username} 
+            defaultValue={userInfo.username} 
+            onChange={handleChange('username')} />
           </Grid>
           <Grid item xs={12} sm={6}>
             <TextField fullWidth label='Name' placeholder={userInfo.name} defaultValue={userInfo.name} onChange={handleChange('name')} />
