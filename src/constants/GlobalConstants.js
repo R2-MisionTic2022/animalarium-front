@@ -2,7 +2,7 @@ export const LOGIN_ENDPOINTS = {
   LOGIN: '/usuarios/login',
   SIGN_UP: '/usuarios',
   EMAIL_CHECK: '/ServletVerificarEmail',
-  USER_UPDATE: '/ServletActualizarDatosUsuario',
+  USER_UPDATE: '/usuarios',
 };
 
 export const ITEMS_ENDPOINTS = {
