@@ -11,8 +11,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import { ItemListAPI, ItemRegisterAPI } from '../../../services/ProductsAPI'
 import { useState } from 'react'
 import { useEffect } from 'react'
-import { Box, Button, Modal, styled, Typography } from '@mui/material'
-import FormControl from '@mui/material/FormControl'
+import { Box, Button, Grid, Modal, styled, Typography } from '@mui/material'
 import TextField from '@mui/material/TextField'
 
 
@@ -51,7 +50,7 @@ const TableArticle = () => {
                 if (res !== false) {
                     //setOpenAlert(true)
                     //setAlertState(alertState.success)
-                    //setMsj(alertsMjs.updateUserMjs)
+                    //setMsj(alertsMjs.updateArticleMjs)
                 } else {
                     //console.log("Login Fail")
                     console.log(res)
@@ -79,11 +78,10 @@ const TableArticle = () => {
         setValues({ ...values, [prop]: event.target.value })
     }
 
-    // const alertsMjs = {
-    // deleteArticleMJS: 'Se eliminó el artículo correctamente',
-    // updateArticleMjs: 'El artículo fué actualizado correctamente',
-    // updateArticleAlert: 'El articulo que intenta registrar ya se encuentra ingresado',
-    // }
+    const alertsMjs = {
+    updateArticleMjs: 'El artículo fué actualizado correctamente',
+    updateArticleAlert: 'El articulo que intenta registrar ya se encuentra ingresado',
+    }
 
 
     return (
@@ -149,33 +147,95 @@ const TableArticle = () => {
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
-                <Box width={400} heigth={280} bgcolor="white" p={3} borderRadius={5}>
+                <Box width={700} heigth={400} bgcolor="white" p={3} borderRadius={5}>
                     <Typography variant="h6" color="gray" textAlign="center" p={2}>
                         Editar artículo
                     </Typography>
                     <form>
+                    <Grid container spacing={7}>
+                        <Grid item xs={12} sm={6}>
                         <TextField p={2} fullWidth label='Referencia'
                             placeholder="referencia"
                             defaultValue={articulos.referencia}
                             onChange={handleChange('referencia')}
                         />
-                        <Button variant='contained' sx={{ marginRight: 3.5 }} p={2}
-                            onClick={(e) => {
-                                handlerArticleUpdate(
-                                    articulos._id,
-                                    values.referencia,
-                                    values.title,
-                                    values.description,
-                                    values.url,
-                                    values.stock,
-                                    values.price,
-                                    values.categoria,
-                                    values.typePet,
-                                    values.status,
-                                )
-                            }}>
-                            Editar
-                        </Button>
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                        <TextField p={2} fullWidth label='title'
+                            placeholder="title"
+                            defaultValue={articulos.title}
+                            onChange={handleChange('title')}
+                        />
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                        <TextField p={2} fullWidth label='description'
+                            placeholder="description"
+                            defaultValue={articulos.description}
+                            onChange={handleChange('description')}
+                        />
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                        <TextField p={2} fullWidth label='url'
+                            placeholder="url"
+                            defaultValue={articulos.url}
+                            onChange={handleChange('url')}
+                        />
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                            <TextField p={2} fullWidth label='stock'
+                                placeholder="stock"
+                                defaultValue={articulos.stock}
+                                onChange={handleChange('stock')}
+                            />
+                        </Grid>
+                         <Grid item xs={12} sm={6}>
+                            <TextField p={2} fullWidth label='price'
+                                placeholder="price"
+                                defaultValue={articulos.price}
+                                onChange={handleChange('price')}
+                            />
+                        </Grid>
+                         <Grid item xs={12} sm={6}>
+                            <TextField p={2} fullWidth label='Categoria'
+                                placeholder="categoria"
+                                defaultValue={articulos.categoria}
+                                onChange={handleChange('categoria')}
+                            />
+                        </Grid>
+                         <Grid item xs={12} sm={6}>
+                            <TextField p={2} fullWidth label='TypePet'
+                                placeholder="typePet"
+                                defaultValue={articulos.typePet}
+                                onChange={handleChange('typePet')}
+                            />
+                        </Grid>
+                         <Grid item xs={12} sm={6}>
+                            <TextField p={2} fullWidth label='status'
+                                placeholder="status"
+                                defaultValue={articulos.status}
+                                onChange={handleChange('status')}
+                            />
+                        </Grid>
+                        <Grid item xs={12}>
+                            <Button variant='contained' sx={{ marginRight: 3.5 }} p={2}
+                                onClick={(e) => {
+                                    handlerArticleUpdate(
+                                        articulos._id,
+                                        values.referencia,
+                                        values.title,
+                                        values.description,
+                                        values.url,
+                                        values.stock,
+                                        values.price,
+                                        values.categoria,
+                                        values.typePet,
+                                        values.status,
+                                    )
+                                }}>
+                                Editar
+                            </Button>
+                        </Grid>
+                        </Grid>
                     </form>
 
                 </Box>
